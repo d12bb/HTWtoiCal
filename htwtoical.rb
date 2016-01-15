@@ -22,7 +22,7 @@ page = agent.submit(form, form.buttons.first)
 # stupid page uses another form, instantly redirecting when in browser
 form = page.forms.first
 page = agent.submit(form)
-csv = page.body.force_encoding("ISO-8859-1").encode("utf-8").gsub(/\r\n?/, "\n") # stupid non-unicode nonsense..
+csv = page.body.force_encoding("ISO-8859-1").encode("utf-8").gsub(/\r\n?/, "\n") # stupid non-unicode and windows nonsense..
 
 termine = CSV.parse(csv)
 
